@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organization_accounts",
+  "info": {
+    "singularName": "organization-account",
+    "pluralName": "organization-accounts",
+    "displayName": "organization_account"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "organization": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::organization.organization"
+    },
+    "bank_account": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bank-account.bank-account"
+    }
+  }
+}

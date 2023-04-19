@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "singularName": "transaction",
+    "pluralName": "transactions",
+    "displayName": "transaction"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "amount": {
+      "type": "float",
+      "required": true
+    },
+    "currency": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::currency.currency"
+    },
+    "transaction_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::transaction-type.transaction-type"
+    },
+    "transaction_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::transaction-category.transaction-category"
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "bank_account": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bank-account.bank-account"
+    },
+    "from": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::organization.organization"
+    },
+    "to": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::organization.organization"
+    }
+  }
+}

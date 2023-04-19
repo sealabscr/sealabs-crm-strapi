@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bank_accounts",
+  "info": {
+    "singularName": "bank-account",
+    "pluralName": "bank-accounts",
+    "displayName": "bank_account"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bank_name": {
+      "type": "string",
+      "required": true
+    },
+    "iban": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "amount": {
+      "type": "float"
+    },
+    "currency": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::currency.currency"
+    }
+  }
+}
